@@ -1,0 +1,50 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.python-version
+
+# Virtual environments and dotenv
+venv/
+.venv/
+env/
+ENV/
+.env
+
+# Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Test, coverage, and caches
+.tox/
+.pytest_cache/
+.coverage*
+.cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+logs/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# IDE/editor
+.vscode/
+.idea/
+*.iml
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS-specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Media: ignore all media assets
+media/ 
