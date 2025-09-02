@@ -1,0 +1,47 @@
+﻿# Voice-Over Script for Imran's Lab Video
+# Optimized for Google Text-to-Speech
+# Total Duration: ~30-36 seconds
+
+# === OPENING BRANDING (0:00 - 0:08) ===
+# [Logo appears with tagline]
+# Pause for logo to settle, then speak tagline
+
+"We are experts in design, app, and developments."
+
+# === ABOUT ME SECTION (0:08 - 0:15) ===
+# [About Me title appears]
+# Brief pause for title, then continue
+
+"Hi, I'm Saifur Rahman. I have a Bachelor of Science in Computer Science and Engineering from North South University."
+
+# === FUN FACT SECTION (0:15 - 0:22) ===
+# [Fun Fact title appears]
+# Slight pause, then deliver with enthusiasm
+
+"Here's a fun fact about me. I love coding, but I also love cooking. I often cook for myself."
+
+# === EXCITEMENT SECTION (0:22 - 0:30) ===
+# [Why I'm Excited title appears]
+# Build energy and enthusiasm
+
+"I'm thrilled to learn and contribute at Imran's Lab. I'm passionate about design, apps, and development. I'm eager to collaborate and build impactful projects."
+
+# === END CARD (0:30 - 0:33) ===
+# [Thank you appears]
+# Warm, professional closing
+
+"Thank you."
+
+# === CLOSING BRANDING (0:33 - 0:36) ===
+# [Logo returns]
+# Brief pause, then final tagline
+
+"We are experts in design, app, and developments."
+
+# === TTS OPTIMIZATION NOTES ===
+# - Use periods for natural pauses
+# - Keep sentences concise for better TTS flow
+# - Avoid complex punctuation that might confuse TTS
+# - Natural speaking pace: ~150-160 words per minute
+# - Total word count: ~75 words for ~30-36 second duration
+# - Recommended TTS settings: Female voice, medium speed, natural tone
