@@ -1,83 +1,77 @@
-# imranslabTask
+# Imran's Lab Manim Video
 
-A minimal workspace containing a Python example script and sample media assets (images, texts, and videos). Use this repo as a starting point for experimenting with media processing or scripting tasks.
+This project contains three Manim scenes to create a simple intro video:
 
-## Requirements
+- Opening branding (logo + tagline)
+- Middle content (intro, fun fact, why excited)
+- Full video that stitches opening → middle → opening
 
-- Python 3.9+ (recommended)
-- Windows PowerShell (instructions below use PowerShell)
+## Prerequisites
 
-## Quick Start (Windows PowerShell)
+- Python 3.10+
+- Manim Community (tested on v0.19.x)
 
-```powershell
-# From the project root
-cd C:\Users\saif\imranslabTask
+Install Manim (recommended in a virtual environment):
 
-# (Optional) Create & activate a virtual environment
-python -m venv venv
-.\venv\Scripts\Activate.ps1
-
-# (Optional) Install dependencies if you add a requirements file later
-# pip install -r requirements.txt
-
-# Run the example script
-python .\example.py
-```
-
-## Using Manim
-
-Manim renders mathematical animations and saves outputs under `media/`.
-
-### Install
-
-```powershell
-# Inside your (optional) virtual environment
+```bash
 pip install manim
 ```
 
-### Render a scene
+If you plan to render SVG logos, also place your SVG in `assets/imranslab_logo.svg`.
 
-```powershell
-# Render a Scene class from a Python file
-# -p: preview after render, -ql: low quality (fast), -pqh: high quality with preview
-manim -p -ql .\example.py SceneName
+## Assets
 
-# For higher quality
-manim -pqh .\example.py SceneName
+- Logo image (preferred): `assets/branding_image.png` (PNG/JPG)
+- Optional SVG fallback: `assets/imranslab_logo.svg`
+
+Tagline and colors are defined in `opening_branding.py`.
+
+## Render Individual Scenes
+
+- Opening branding only:
+
+```bash
+manim -pql opening_branding.py OpeningBranding
 ```
 
-- Outputs will appear in `media/videos/` (MP4s) and `media/images/` (stills) with resolution-specific subfolders.
-- Manim also creates `media/texts/`, `media/Tex/`, and `partial_movie_files/` while rendering.
+- Middle content only:
 
-## Project Structure
+```bash
+manim -pql middle_part.py MiddlePart
+```
 
+Use `-pqh` for high quality; omit `-p` to skip preview.
+
+## Render Full Combined Video
+
+This runs opening → middle → opening again:
+
+```bash
+manim -pql main_video.py FullVideo
 ```
-imranslabTask/
-  ├─ example.py                   # Sample Python script
-  ├─ media/
-  │  ├─ images/
-  │  │  └─ example/
-  │  ├─ texts/
-  │  │  └─ a9c85f761c428e91.svg   # Sample text-based SVG asset
-  │  └─ videos/
-  │     └─ example/
-  │        └─ 480p15/
-  │           ├─ MyScene.mp4
-  │           ├─ SquareToCircle.mp4
-  │           └─ partial_movie_files/
-  │              ├─ MyScene/              # Chunked/temporary parts for MyScene
-  │              └─ SquareToCircle/       # Chunked/temporary parts for SquareToCircle
-  └─ venv/                       # (Optional) Python virtual environment
-```
+
+Output videos are written to `media/videos/...`.
+
+## Customization
+
+- Opening branding
+
+  - Logo image: add/replace `assets/branding_image.png`
+  - Optional SVG: `assets/imranslab_logo.svg`
+  - Tagline text: edit the `Text("We Are Experts In Design, App, and Developments")` line
+  - Colors: edit `COLOR_TEXT` and `COLOR_BACKGROUND`
+
+- Middle content
+
+  - Replace placeholder lines with your own text in `middle_part.py`
+  - Colors/background: `COLOR_TEXT`, `COLOR_BACKGROUND`
+  - Background animation: animated dots drift subtly; timing tied to section durations
+
+- Full video
+  - Sequence is defined in `main_video.py` by calling the two scene `construct` methods in order
 
 ## Notes
 
-- The `media/videos/example/480p15/partial_movie_files/` folders contain temporary/partial files often created by video processing tools; they can be re-generated and are typically safe to ignore in version control.
-- If `example.py` requires third‑party libraries, add a `requirements.txt` and install via `pip install -r requirements.txt`.
-- On PowerShell, you may need to allow script execution for activating virtual environments:
-
-```powershell
-Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
-```
-
-Revert or tighten this policy after setup as needed.
+- If you change fonts, ensure they are installed on your system (e.g., Calibri). Manim will fall back if unavailable.
+- Quick preview quality: `-pql`; high quality: `-pqh`.
+- Windows PowerShell examples are the same as above commands.
