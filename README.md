@@ -11,10 +11,18 @@ This project contains three Manim scenes to create a simple intro video:
 - Python 3.10+
 - Manim Community (tested on v0.19.x)
 
-Install Manim (recommended in a virtual environment):
+Install dependencies (recommended in a virtual environment):
 
 ```bash
-pip install manim
+# create and activate a virtual environment (optional but recommended)
+python -m venv venv
+# Windows PowerShell
+./venv/Scripts/Activate.ps1
+# macOS/Linux
+# source venv/bin/activate
+
+# install dependencies
+pip install -r requirements.txt
 ```
 
 If you plan to render SVG logos, also place your SVG in `assets/imranslab_logo.svg`.
